@@ -19,12 +19,12 @@ const Nav = ({ setFilter, setPageNumber }: NavProps) => {
   };
 
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-2 text-neutral-100 shadow-lg hover:text-neutral-100 focus:text-neutral-100 lg:py-4">
-      <div className="ml-5 flex w-[30%] items-center justify-between">
+    <nav className="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-2 px-5 text-neutral-100 shadow-lg hover:text-neutral-100 focus:text-neutral-100 lg:py-4">
+      <div className="flex w-full md:w-[50%] items-center justify-between">
         <input
           ref={searchRef}
           type="search"
-          className="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-white bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-100 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-100 focus:outline-none motion-reduce:transition-none dark:border-neutral-600 dark:bg-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-200"
+          className="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-neutral-300 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-100 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-100 focus:outline-none motion-reduce:transition-none dark:border-neutral-600 dark:bg-neutral-600 dark:text-neutral-100 dark:placeholder:text-neutral-200"
           placeholder="Search"
           aria-label="Search"
           aria-describedby="button-addon2"
