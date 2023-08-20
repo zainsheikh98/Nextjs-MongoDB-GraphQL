@@ -7,12 +7,16 @@ const getUsers = async (filterParams: GetUserInput) => {
     const { pageNumber, pageSize, filter } = filterParams;
     await connectDB();
 
-    let users;
+    const searchableFields = ['companyName', 'name', 'email', 'phone'];
+    const regex = new RegExp(`\\b${filter}\\b`, 'i');
 
+    let users;
     if (filter)
-      users = await UserModel.aggregate([
-        { $match: { $text: { $search: filter } } },
-      ])
+      users = await UserModel.find({
+        $or: searchableFields.map((field) => ({
+          [field]: { $regex: regex },
+        })),
+      })
         .limit(pageSize)
         .skip(pageSize * pageNumber);
     else
