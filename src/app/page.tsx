@@ -55,8 +55,12 @@ const HomePage = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between content-center">
       <Nav setFilter={setFilter} setPageNumber={setPageNumber} />
-      {loading || !users?.length ? <Skeleton /> : <Table users={users} />}
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      {loading || !users ? <Skeleton /> : <Table users={users} />}
+      <Pagination
+        records={users?.length}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </main>
   );
 };
